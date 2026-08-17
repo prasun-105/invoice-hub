@@ -1,32 +1,165 @@
-# About Invoicer - Read the note at the end
+# Invoice Hub
 
-![alt](./Screenshot.png)
+A responsive **React-based invoice generator** that allows users to create, edit, preview, print, and save professional invoices directly from the browser.
 
-## Current Features
+<p align="center">
+  <img src="./Screenshot.png" alt="Invoice Hub Preview" width="650"/>
+</p>
 
-1. Form to capture yours and your client's data such as full name, email address, physical address, website and your bank account details.
-2. Input invoice number, invoice date and due date.
-3. Create invoice table - add, edit and remove items from your table.
-4. See the total amount of items in the table.
-5. Write additional notes to your client such as how to pay, bank details and so on and so forth.
-6. Preview your invoice.
-7. Print your invoice.
+## Overview
 
-## Updates
+Invoice Hub is a frontend web application designed to simplify the process of creating invoices.
 
-1. I've updated `react-scripts` to version 5.0.0 which is the latest version. Take note of this if you're coming from the YouTube series.
-2. I have now installed Tailwind CSS via `npm` as they have released version 3 which includes many more features out of the box and works amazingly with the updated `react-scripts`. Take note of this as well if you're coming from the YouTube series.
-3. I added a landing page and login/logout authentication and redesigned the default page for the invoice application. Once again, please take note of this if you're coming from the YouTube series.
+Users can enter client information, invoice details, products or services, quantity, price, and additional notes. The application automatically calculates item amounts and the final invoice total while updating the invoice preview in real time.
 
-## Todos (additional features to add)
+## Features
 
-1. Modal to send invoice to client's email - so, add input for client email.
-2. Currency converter because yes.
-3. Research PDFLayer to convert invoice to pdf for download (and also to send to email).
-4. Probably better if I display the form and invoice side by side instead of having to switch every single time to preview.
+* Add client name and address
+* Enter invoice number, invoice date, and due date
+* Add multiple products or services
+* Automatically calculate item amount using quantity and price
+* Automatically calculate the total invoice value
+* Edit existing invoice items
+* Delete invoice items with confirmation
+* Add additional notes or payment instructions
+* Real-time invoice preview
+* Print invoices directly from the browser
+* Save invoices as PDF using the browser print option
+* Responsive design for different screen sizes
+* Form validation with notification messages
+* Basic authentication support using Netlify Identity
 
-## NOTE:
+## Tech Stack
 
-I am adding more features and functionality to this app. If you're following along from the YouTube videos, please take note of the changes in file structure and everything.
+**Frontend**
 
+* React.js
+* JavaScript
+* HTML5
+* Tailwind CSS
 
+**React Features**
+
+* React Hooks
+* React Context API
+* React Router
+
+**Libraries**
+
+* React To Print
+* React Toastify
+* Formik
+* UUID
+* React Icons
+* Collect.js
+* Netlify Identity
+
+## How It Works
+
+The application uses the **React Context API** to manage invoice data across different components.
+
+When a user adds an invoice item, the application stores:
+
+```text
+Description
+Quantity
+Price
+Amount
+```
+
+The amount is calculated automatically:
+
+```text
+Amount = Quantity × Price
+```
+
+The final invoice amount is calculated by adding all item amounts:
+
+```text
+Total = Sum of all invoice item amounts
+```
+
+Whenever the user updates the form, the invoice preview is updated instantly without refreshing the page.
+
+## Invoice Management
+
+Users can add multiple items to an invoice and manage them using edit and delete options.
+
+Each invoice item receives a unique ID using the **UUID library**, which helps identify individual records when editing or deleting them.
+
+## Print and PDF
+
+The project uses **React To Print** to generate a printable version of the invoice.
+
+Users can click the **Print / Download** button and then:
+
+* Print the invoice
+* Save the invoice as PDF
+* Select printer and page settings
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/prasun-105/invoice-hub.git
+```
+
+Move into the project directory:
+
+```bash
+cd invoice-hub
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm start
+```
+
+The application will normally run at:
+
+```text
+http://localhost:3000
+```
+
+## Future Improvements
+
+Some improvements that can be added in future versions:
+
+* Backend and database integration
+* Permanent invoice storage
+* User-specific invoice history
+* Direct PDF download
+* Send invoices through email
+* GST, tax, and discount calculations
+* Multiple currency support
+* Multiple invoice templates
+* Business logo upload
+* Customer management
+* Invoice search and filtering
+
+## Project Purpose
+
+This project demonstrates practical implementation of:
+
+* React component-based architecture
+* React Hooks
+* Context API state management
+* Form handling
+* CRUD-style operations
+* Real-time calculations
+* Conditional rendering
+* Client-side routing
+* Responsive UI design
+* Invoice printing functionality
+
+## Repository
+
+**GitHub:** `prasun-105/invoice-hub`
