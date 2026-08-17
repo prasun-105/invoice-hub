@@ -29,4 +29,4 @@
 
 I am adding more features and functionality to this app. If you're following along from the YouTube videos, please take note of the changes in file structure and everything.
 
-### Built by [ Pranay Raj](https://invoicer2-7t0xbzhdz-pranay-rajs-projects-338847bf.vercel.app/)
+
